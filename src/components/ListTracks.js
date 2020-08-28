@@ -10,7 +10,7 @@ export const ListTracks = (props) => {
     <div>
       {tracks.map((track, index) => (
         <div>
-          <p>Track</p>
+          <p>Track {index + 1}</p>
           <ListEvents events={track} key={index}></ListEvents>
         </div>
       ))}

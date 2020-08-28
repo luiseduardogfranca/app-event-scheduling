@@ -9,7 +9,7 @@ export const SendEvents = (props) => {
     const data = new FormData();
     data.append("file", file);
     axios
-      .post("http://localhost:3000/api/v1/sendEvents", data, {})
+      .post(`${process.env.REACT_APP_API_URL}/api/v1/sendEvents`, data, {})
       .then((res) =>
         res.data ? refreshEvents((el) => res.data) : console.log(res)
       );
