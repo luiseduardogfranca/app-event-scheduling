@@ -1,3 +1,11 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +43,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  /* src: url("./assets/fonts/Montserrat-Bold.ttf"); */
+  src: url("./assets/fonts/montserrat-bold-webfont.woff2");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  /* src: url("./assets/fonts/Montserrat-SemiBold.ttf"); */
+  src: url("./assets/fonts/montserrat-semibold-webfont.woff2");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("./assets/fonts/Montserrat-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("./assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("./assets/fonts/Montserrat-Medium.ttf");
 }

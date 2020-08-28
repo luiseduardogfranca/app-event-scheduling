@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { NavbarForm, ContainerTitle } from "./style";
 
 export const SendEvents = (props) => {
   const { refreshEvents } = props;
@@ -12,7 +13,8 @@ export const SendEvents = (props) => {
       .post(`${process.env.REACT_APP_API_URL}/api/v1/sendEvents`, data, {})
       .then((res) =>
         res.data ? refreshEvents((el) => res.data) : console.log(res)
-      );
+      )
+      .catch((err) => alert("File not uploaded"));
   };
 
   const saveFile = (event) => {
@@ -28,12 +30,15 @@ export const SendEvents = (props) => {
     }
   };
   return (
-    <div>
-      <label>Submeta o arquivo</label>
-      <input type="file" onChange={saveFile}></input>
+    <NavbarForm>
+      <h1>Scheduling Events</h1>
+      <ContainerTitle>
+        <h1>Submit the file</h1>
+        <input name="eijdie" type="file" onChange={saveFile}></input>
+      </ContainerTitle>
       <button type="button" onClick={handlerUpload}>
-        Enviar
+        Confirm
       </button>
-    </div>
+    </NavbarForm>
   );
 };

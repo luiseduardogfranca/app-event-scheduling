@@ -1,19 +1,16 @@
 import React, { useEffect } from "react";
 import { ListEvents } from "./ListEvents";
-
+import { ContainerTrack, Track } from "./style";
 export const ListTracks = (props) => {
   const { tracks } = props;
-
-  useEffect(() => console.log(tracks), [tracks]);
-
   return (
-    <div>
+    <ContainerTrack>
       {tracks.map((track, index) => (
-        <div>
-          <p>Track {index + 1}</p>
+        <Track>
+          <p class="title">Track {index + 1}</p>
           <ListEvents events={track} key={index}></ListEvents>
-        </div>
+        </Track>
       ))}
-    </div>
+    </ContainerTrack>
   );
 };

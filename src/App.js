@@ -3,15 +3,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import { SendEvents } from "./components/SendEvents";
 import { ListTracks } from "./components/ListTracks";
+import { Container } from "./components/style";
 
 function App() {
   const [tracks, setTracks] = useState([]);
 
   return (
-    <div>
+    <Container>
       <SendEvents refreshEvents={setTracks}></SendEvents>
       <ListTracks tracks={tracks}></ListTracks>
-    </div>
+    </Container>
   );
 }
 
