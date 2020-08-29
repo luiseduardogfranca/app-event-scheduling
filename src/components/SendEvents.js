@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { NavbarForm, ContainerTitle } from "./style";
+import { NavbarForm, ContainerTitle, HeaderNavbar } from "./style";
 
 export const SendEvents = (props) => {
   const { refreshEvents } = props;
@@ -9,6 +9,9 @@ export const SendEvents = (props) => {
   const handlerUpload = () => {
     const data = new FormData();
     data.append("file", file);
+
+    document.getElementById("input-file").value = null;
+
     axios
       .post(`${process.env.REACT_APP_API_URL}/api/v1/sendEvents`, data, {})
       .then((res) =>
@@ -31,10 +34,23 @@ export const SendEvents = (props) => {
   };
   return (
     <NavbarForm>
-      <h1>Scheduling Events</h1>
+      <HeaderNavbar>
+        <h1>Events Scheduling</h1>
+        <a
+          target="_blank"
+          href="https://github.com/luiseduardogfranca/event-scheduling"
+        >
+          GitHub repository
+        </a>
+      </HeaderNavbar>
       <ContainerTitle>
         <h1>Submit the file</h1>
-        <input name="eijdie" type="file" onChange={saveFile}></input>
+        <input
+          name="eijdie"
+          id="input-file"
+          type="file"
+          onChange={saveFile}
+        ></input>
       </ContainerTitle>
       <button type="button" onClick={handlerUpload}>
         Confirm
